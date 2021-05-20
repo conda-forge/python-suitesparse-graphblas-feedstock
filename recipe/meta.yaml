@@ -1,5 +1,5 @@
 {% set name = "python-suitesparse-graphblas" %}
-{% set version = "4.0.3.0" %}
+{% set version = "5.0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GraphBLAS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: db959dd4f6bef3839e2b2e600e7be287bf07aa289c893662291a184363b89878
+  sha256: e028d2572cebfd1e30b5b10f83c00aa667ae813771fabe359d332a3dbc6c4c58
 
 build:
   skip: true  # [py<37]
@@ -23,14 +23,13 @@ requirements:
     - setuptools
     - cffi
     - cython
-    - graphblas
+    - graphblas ={{ version.rsplit('.', 1)[0] }}
     - numpy
     - pytest-runner
   run:
     - {{ pin_compatible('numpy') }}
     - python
     - cffi
-    - numba
 
 test:
   imports:
