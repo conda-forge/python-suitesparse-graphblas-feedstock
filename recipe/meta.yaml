@@ -30,7 +30,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - python
     - cffi
-    - numba
 
 test:
   imports:
