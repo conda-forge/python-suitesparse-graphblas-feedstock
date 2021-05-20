@@ -23,7 +23,7 @@ requirements:
     - setuptools
     - cffi
     - cython
-    - graphblas={{ version.rsplit('.', 1)[0] }}
+    - graphblas ={{ version.rsplit('.', 1)[0] }}
     - numpy
     - pytest-runner
   run:
