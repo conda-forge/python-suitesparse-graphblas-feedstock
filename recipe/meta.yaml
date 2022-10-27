@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<38]
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -40,7 +40,12 @@ test:
   imports:
     - suitesparse_graphblas
   commands:
+    - pip check
     - python -c "from suitesparse_graphblas import lib, ffi"
+    - pytest -v --pyargs suitesparse_graphblas
+  requires:
+    - pip
+    - pytest
 
 about:
   home: https://github.com/GraphBLAS/python-suitesparse-graphblas
