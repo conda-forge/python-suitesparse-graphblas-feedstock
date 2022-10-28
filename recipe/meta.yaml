@@ -1,5 +1,5 @@
 {% set name = "python-suitesparse-graphblas" %}
-{% set version = "7.3.0.0" %}
+{% set version = "7.3.0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/GraphBLAS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1a9553e5d1269b76e56108cf89e0128495aebe07341814402d413d9eab288760
+  sha256: 9fe5cd66ee2ffcd7a2ab8e3ca857b83b450f852f20eaa53084e3fe519cf1d16d
 
 build:
   skip: true  # [py<38]
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -41,6 +41,7 @@ test:
     - suitesparse_graphblas
   commands:
     - pip check
+    - python -c "import platform ; print(platform.machine())"
     - python -c "from suitesparse_graphblas import lib, ffi"
     - pytest -v --pyargs suitesparse_graphblas
   requires:
