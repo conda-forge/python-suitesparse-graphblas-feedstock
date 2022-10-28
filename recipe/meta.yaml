@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/GraphBLAS/{{ name }}/archive/{{ version }}.tar.gz
   sha256: efdeb64f206f2a390611e0d2284fb16d8d158c15eb3f0b2011f363074452cb37
+  patches:
+    - deleteme.diff
 
 build:
   skip: true  # [py<38]
@@ -41,6 +43,7 @@ test:
     - suitesparse_graphblas
   commands:
     - pip check
+    - python -c "import platform ; print(platform.machine())"
     - python -c "from suitesparse_graphblas import lib, ffi"
     - pytest -v --pyargs suitesparse_graphblas
   requires:
