@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GraphBLAS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: c178fe32309c3931e4e343ac03d445a309cd8fccae6abc95904140a5c7497e68
+  sha256: efdeb64f206f2a390611e0d2284fb16d8d158c15eb3f0b2011f363074452cb37
 
 build:
   skip: true  # [py<38]
