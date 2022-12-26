@@ -1,5 +1,5 @@
 {% set name = "python-suitesparse-graphblas" %}
-{% set version = "7.3.3.0" %}
+{% set version = "7.4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/GraphBLAS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 1053e86c91671a2346071a7c0fc7985079f5dfbe907db8e846f81fe16fdaa1b1
+  sha256: 8a745a60dfbe18ba0b4639b6e42465421c6d8a46913ac8e323f3e003a5ea3fba
 
 build:
   skip: true  # [py<38]
@@ -57,7 +57,7 @@ about:
   description: |
     Python CFFI binding around SuiteSparse::GraphBLAS. This is a base package that exposes
     only the low level CFFI API bindings and symbols. This package is shared by the syntax
-    bindings pygraphblas and grblas.
+    bindings pygraphblas and python-graphblas.
   dev_url: https://github.com/GraphBLAS/python-suitesparse-graphblas
 
 extra:
