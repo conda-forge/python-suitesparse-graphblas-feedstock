@@ -13,7 +13,7 @@ Development: https://github.com/GraphBLAS/python-suitesparse-graphblas
 
 Python CFFI binding around SuiteSparse::GraphBLAS. This is a base package that exposes
 only the low level CFFI API bindings and symbols. This package is shared by the syntax
-bindings pygraphblas and grblas.
+bindings pygraphblas and python-graphblas.
 
 
 Current build status
