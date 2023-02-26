@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/suitesparse-graphblas-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/s/suitesparse-graphblas/suitesparse-graphblas-{{ version }}.tar.gz
   sha256: 72d6ffb36a655d6ff4a6e9314adc8f3d92dce66e384358215681ac0f1d95da90
 
 build:
