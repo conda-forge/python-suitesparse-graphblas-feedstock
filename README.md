@@ -1,11 +1,11 @@
-About python-suitesparse-graphblas
-==================================
+About python-suitesparse-graphblas-feedstock
+============================================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-suitesparse-graphblas-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/GraphBLAS/python-suitesparse-graphblas
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/python-suitesparse-graphblas-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python CFFI binding around SuiteSparse::GraphBLAS
 

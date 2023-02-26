@@ -1,13 +1,13 @@
 {% set name = "python-suitesparse-graphblas" %}
-{% set version = "7.4.3.0" %}
+{% set version = "7.4.3.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/GraphBLAS/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ce60e73a24f33a63be05798975ba010ae4a0d7d54fb0382562574965daadc923
+  url: https://pypi.io/packages/source/s/suitesparse-graphblas/suitesparse-graphblas-{{ version }}.tar.gz
+  sha256: 72d6ffb36a655d6ff4a6e9314adc8f3d92dce66e384358215681ac0f1d95da90
 
 build:
   skip: true  # [py<38]
@@ -25,7 +25,8 @@ requirements:
   host:
     - python
     - pip
-    - setuptools
+    - setuptools >=64
+    - setuptools-git-versioning
     - cffi
     - cython
     - graphblas ={{ version.rsplit('.', 1)[0] }}
