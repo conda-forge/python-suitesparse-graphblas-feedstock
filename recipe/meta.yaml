@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<38]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,6 +22,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - cffi                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -33,7 +34,6 @@ requirements:
     - numpy
     - pytest-runner
   run:
-    - {{ pin_compatible('numpy') }}
     - python
     - cffi
 
