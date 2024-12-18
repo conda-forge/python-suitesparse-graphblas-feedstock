@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/s/suitesparse-graphblas/suitesparse-graphblas-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/s/suitesparse-graphblas/suitesparse-graphblas-{{ version }}.tar.gz
   sha256: 69c975d9b5ddcf5fa3172a86c3ccbdac4670667a39bac41138b2d70fe24e32ba
 
 build:
   skip: true  # [py<38]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -22,6 +22,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - cffi                                   # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - pip
@@ -33,7 +34,6 @@ requirements:
     - numpy
     - pytest-runner
   run:
-    - {{ pin_compatible('numpy') }}
     - python
     - cffi
 
