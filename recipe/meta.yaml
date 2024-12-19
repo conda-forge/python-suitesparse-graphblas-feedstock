@@ -36,6 +36,7 @@ requirements:
   run:
     - python
     - cffi
+    - numpy >=1.23
 
 test:
   imports:
