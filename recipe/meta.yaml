@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<38]
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -45,7 +45,9 @@ test:
     - pip check
     - python -c "import platform ; print(platform.machine())"
     - python -c "from suitesparse_graphblas import lib, ffi"
+    - python -m suitesparse_graphblas.tests.test_initialize
     - pytest -v --pyargs suitesparse_graphblas
+    - pytest -s -k test_print_jit_config --pyargs suitesparse_graphblas.tests.test_jit
   requires:
     - pip
     - pytest
