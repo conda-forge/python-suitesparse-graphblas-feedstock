@@ -1,5 +1,5 @@
 {% set name = "python-suitesparse-graphblas" %}
-{% set version = "9.3.1.0" %}
+{% set version = "9.4.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/s/suitesparse_graphblas/suitesparse_graphblas-{{ version }}.tar.gz
-  sha256: 6c6e7835def5ae783f4324675b526c9dd1e1020a4dad0c1e73023e640f54db97
+  sha256: 5f306b92fb0f80e2b74cc6da130c1c9b6862f76f4c6d36b235c296fd4f5e413e
 
 build:
   skip: true  # [py<38]
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
