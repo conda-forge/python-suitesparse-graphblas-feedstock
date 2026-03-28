@@ -10,7 +10,7 @@ source:
   sha256: 8be641d3a28797f21b4a70faf83305799e29d79f33da3bcbe223032e068f297c
 
 build:
-  skip: true  # [py<38]
+  skip: true  # [py<311]
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
@@ -26,17 +26,16 @@ requirements:
   host:
     - python
     - pip
-    - setuptools >=64
+    - setuptools >=77
     - setuptools-git-versioning
     - cffi
     - cython
     - graphblas ={{ version.rsplit('.', 1)[0] }}
     - numpy
-    - pytest-runner
   run:
     - python
     - cffi
-    - numpy >=1.23
+    - numpy >=1.24
 
 test:
   imports:
