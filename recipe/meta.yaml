@@ -48,6 +48,11 @@ test:
     - pip check
     - python -c "import platform ; print(platform.machine())"
     - python -c "from suitesparse_graphblas import lib, ffi"
+    # Fail loudly if libgraphblas was built without OpenMP. GraphBLAS only
+    # warns at configure time and still builds a serial library, so this is
+    # otherwise invisible: graphblas 10.5.0 shipped that way on osx-arm64
+    # while still depending on llvm-openmp.
+    - python -c "import suitesparse_graphblas as s; from suitesparse_graphblas import lib, ffi; s.initialize(); p = ffi.new('int32_t*'); assert lib.GrB_Global_get_INT32(lib.GrB_GLOBAL, p, lib.GxB_LIBRARY_OPENMP) == lib.GrB_SUCCESS; assert p[0], 'libgraphblas was built without OpenMP'"
     - pytest -v --pyargs suitesparse_graphblas
   requires:
     - pip
