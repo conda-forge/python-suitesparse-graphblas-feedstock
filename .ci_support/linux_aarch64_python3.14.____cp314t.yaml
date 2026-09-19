@@ -24,3 +24,6 @@ suitesparse:
 - '7'
 target_platform:
 - linux-aarch64
+zip_keys:
+- - python
+  - channel_sources

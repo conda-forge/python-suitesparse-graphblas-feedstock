@@ -11,7 +11,7 @@ source:
 
 build:
   skip: true  # [py<311]
-  number: 0
+  number: 1
   script:
     # The sdist ships a utils.c that was cythonized against numpy 2.5 and only compiles
     # with numpy >=2.5 headers; drop it so it is regenerated for the numpy used here.
