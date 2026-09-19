@@ -1,5 +1,5 @@
 {% set name = "python-suitesparse-graphblas" %}
-{% set version = "10.5.0.0" %}
+{% set version = "10.5.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/suitesparse_graphblas/suitesparse_graphblas-{{ version }}.tar.gz
-  sha256: 66aec95b05bc6ebb2c85d4f41ff906ec954db51d95158e1b168056dfd475d683
+  sha256: 30e95d63464a6012e9611013f7cc83e3d9709c558a0ec36cfe551b8b0cdfbd26
 
 build:
   skip: true  # [py<311]
