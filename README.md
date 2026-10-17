@@ -15,7 +15,6 @@ Python CFFI binding around SuiteSparse::GraphBLAS. This is a base package that e
 only the low level CFFI API bindings and symbols. This package is shared by the syntax
 bindings pygraphblas and python-graphblas.
 
-
 Current build status
 ====================
 
@@ -73,6 +72,13 @@ Current build status
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12611&branchName=main">
                   <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/python-suitesparse-graphblas-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.14.____cp314t" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_python3.15.____cp315</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=12611&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/python-suitesparse-graphblas-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.15.____cp315" alt="variant">
                 </a>
               </td>
             </tr>
