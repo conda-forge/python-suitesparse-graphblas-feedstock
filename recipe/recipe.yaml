@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "10.5.1.1"
+  version: "10.5.2.0"
   # The first three parts of the version are the SuiteSparse:GraphBLAS version
   graphblas_version: ${{ (version | split("."))[:3] | join(".") }}
 
@@ -11,7 +11,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/s/suitesparse_graphblas/suitesparse_graphblas-${{ version }}.tar.gz
-  sha256: 9eadef09cc25a3fba48854329f2d1522f47baeb5edfc70365e9ca5a8c9992d38
+  sha256: 8fd7b4ac1828ccf5c8878916d7b871ef6c5d674ba47df0f0bb5d34ce6e11dc8b
 
 build:
   number: 0
