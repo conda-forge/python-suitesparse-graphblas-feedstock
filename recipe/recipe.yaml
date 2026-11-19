@@ -14,7 +14,7 @@ source:
   sha256: 8fd7b4ac1828ccf5c8878916d7b871ef6c5d674ba47df0f0bb5d34ce6e11dc8b
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.11")
   script:
     # The sdist ships a utils.c that was cythonized against numpy 2.5 and only compiles
