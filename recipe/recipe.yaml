@@ -45,6 +45,10 @@ requirements:
   run:
     - python
     - cffi >=1.15
+    # graphblas' run_exports only pins x.x (>=10.5.2,<10.6), but the cffi extension
+    # bakes in the GraphBLAS.h it was compiled against, and upstream asserts that this
+    # matches the loaded library exactly (test_libgraphblas_version_matches_the_loaded_library).
+    - graphblas ${{ graphblas_version }}.*
     - numpy >=1.24
 
 tests:
