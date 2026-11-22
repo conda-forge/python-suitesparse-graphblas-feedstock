@@ -14,7 +14,7 @@ source:
   sha256: 8fd7b4ac1828ccf5c8878916d7b871ef6c5d674ba47df0f0bb5d34ce6e11dc8b
 
 build:
-  number: 0
+  number: 1
   skip: match(python, "<3.11")
   script:
     # The sdist ships a utils.c that was cythonized against numpy 2.5 and only compiles
@@ -45,6 +45,10 @@ requirements:
   run:
     - python
     - cffi >=1.15
+    # graphblas' run_exports only pins x.x (>=10.5.2,<10.6), but the cffi extension
+    # bakes in the GraphBLAS.h it was compiled against, and upstream asserts that this
+    # matches the loaded library exactly (test_libgraphblas_version_matches_the_loaded_library).
+    - graphblas ${{ graphblas_version }}.*
     - numpy >=1.24
 
 tests:
